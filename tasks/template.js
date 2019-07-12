@@ -3,7 +3,6 @@ const maquetus = require('maquetus')
 const plumber = require('gulp-plumber')
 const gulpMem = require('../lib/gulpMem')
 const folders = require('../lib/folders')
-const config = require('../config.json')
 
 const template = () =>
     gulp.src(`${folders.src.pages}/**/*.hbs`)
@@ -15,9 +14,6 @@ const template = () =>
             },
             helpers: folders.src.helpers,
             data: folders.src.data,
-            globals: {
-                root: config.publicPath.root
-            },
             hbsOptions: {
                 explicitPartialContext: true
             }

@@ -1,0 +1,27 @@
+{
+    "sources": {
+        "node_modules": "../../node_modules",
+        "dist": "../../dist",
+        "src": "../../src",
+        "components": "components",
+        "layouts": "layouts",
+        "pages": "pages",
+        "partials": "partials",
+        "helpers": "helpers",
+        "assets": "assets",
+        "sass": "assets/sass",
+        "sassApp": "assets/sass/app",
+        "css": "assets/css",
+        "js": "assets/js",
+        "jsApp": "assets/js/app",
+        "fonts": "assets/fonts",
+        "images": "assets/images",
+        "data": "data",
+        "docs": "docs"
+    },
+    "publicPath": {
+        "root": "/",
+        "images": "/assets/images",
+        "fonts": "/assets/fonts"
+    }
+}

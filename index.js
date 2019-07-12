@@ -1,0 +1,10 @@
+const gulp = require('gulp')
+const cleanDist = require('./tasks/cleanDist')
+const template = require('./tasks/template')
+const images = require('./tasks/images')
+const assets = require('./tasks/assets')
+const webpackAssets = require('./tasks/webpackAssets')
+const cleanTmp = require('./tasks/cleanTmp')
+
+exports.build = gulp.series(cleanDist, gulp.parallel(template, images, assets), webpackAssets, cleanTmp)
+exports.default = gulp.series(cleanDist, gulp.parallel(template, images, assets), webpackAssets)

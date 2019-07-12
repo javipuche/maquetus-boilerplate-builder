@@ -1,0 +1,72 @@
+{
+  "name": "maquetus-boilerplate-builder",
+  "version": "1.0.0",
+  "description": "Builder para diferentes boilerplates de maquetación web que usan Maquetus.",
+  "main": "index.js",
+  "scripts": {
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javipuche/maquetus-boilerplate-builder.git"
+  },
+  "keywords": [
+    "gulp",
+    "gulpfile",
+    "config",
+    "webpack",
+    "builder",
+    "boilerplate",
+    "maquetus"
+  ],
+  "author": "Javier Puche",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/javipuche/maquetus-boilerplate-builder/issues"
+  },
+  "homepage": "https://github.com/javipuche/maquetus-boilerplate-builder#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "standard-version": "^6.0.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/register": "^7.4.4",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "css-loader": "^3.0.0",
+    "del": "^5.0.0",
+    "delete-empty": "^3.0.0",
+    "directory-tree": "^2.2.3",
+    "file-loader": "^4.0.0",
+    "front-matter": "^3.0.2",
+    "glob": "^7.1.4",
+    "gulp": "^4.0.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-mem": "^0.1.2",
+    "gulp-plumber": "^1.2.1",
+    "handlebars": "^4.1.2",
+    "image-webpack-loader": "^5.0.0",
+    "js-yaml": "^3.13.1",
+    "maquetus": "^1.5.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-notifier": "^5.4.0",
+    "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.3",
+    "webpack-stream": "^5.2.1",
+    "node-sass": "^4.12.0",
+    "terser-webpack-plugin": "^1.3.0",
+    "yargs": "^13.2.4"
+  }
+}

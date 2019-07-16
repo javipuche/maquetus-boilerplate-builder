@@ -5,6 +5,7 @@ const images = require('./tasks/images')
 const assets = require('./tasks/assets')
 const webpackAssets = require('./tasks/webpackAssets')
 const cleanTmp = require('./tasks/cleanTmp')
+const componentPreviews = require('./tasks/componentPreviews')
 
-exports.build = gulp.series(cleanDist, gulp.parallel(template, images, assets), webpackAssets, cleanTmp)
+exports.build = gulp.series(cleanDist, gulp.parallel(template, images, assets, componentPreviews), webpackAssets, cleanTmp)
 exports.default = gulp.series(cleanDist, gulp.parallel(template, images, assets), webpackAssets)

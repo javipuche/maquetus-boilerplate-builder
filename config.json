@@ -17,7 +17,8 @@
         "fonts": "assets/fonts",
         "images": "assets/images",
         "data": "data",
-        "docs": "docs"
+        "docs": "docs",
+        "componentsPreview": "docs/previews"
     },
     "publicPath": {
         "root": "/",

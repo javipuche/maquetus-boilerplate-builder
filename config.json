@@ -18,7 +18,7 @@
         "images": "assets/images",
         "data": "data",
         "docs": "docs",
-        "componentsPreview": "docs/previews"
+        "componentPreviews": "docs/previews"
     },
     "publicPath": {
         "root": "/",

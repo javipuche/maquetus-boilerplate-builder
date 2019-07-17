@@ -1,6 +1,6 @@
 const indexPagesTpl = () => `
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="es">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,20 +89,19 @@ const indexPagesTpl = () => `
         </head>
         <body>
             <section class="container">
-                <h4>Documentation</h4>
                 <ul class="list first">
-                    {{#each docs}}
-                        {{> pagesList _this=this}}
-                    {{/each}}
+                    <li class="list__item">
+                        <a class="list__link" href="/docs">Documentación</a>
+                    </li>
                 </ul>
-                <h4>Pages List</h4>
+                <h4>Páginas</h4>
                 <ul class="list first">
                     {{#if links}}
                         {{#each links}}
                             {{> pagesList _this=this}}
                         {{/each}}
                     {{else}}
-                        <p>Please create a Page</p>
+                        <p>Crea una página.</p>
                     {{/if}}
                 </ul>
             </section>

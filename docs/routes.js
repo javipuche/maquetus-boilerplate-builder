@@ -2,8 +2,7 @@ const glob = require('glob')
 const { normalize, join, extname } = require('path')
 const compileComponentPreview = require('./compileComponentPreview')
 const renderPage = require('./renderPage')
-const generateStyleLinks = require('./generateStyleLinks')
-const generateScriptSources = require('./generateScriptSources')
+const getStaticResources = require('./getStaticResources')
 const generateNavigation = require('./generateNavigation')
 const renderPreviewTag = require('./renderPreviewTag')
 const config = require('../config.json')
@@ -35,7 +34,7 @@ components.forEach((file) => {
     const url = createUrl(file, folders.src.components, config.sources.componentPreviews)
     routes.push(
         createRoute(url, () =>
-            componentPreviewTpl(compileComponentPreview(file), generateStyleLinks(), generateScriptSources())
+            componentPreviewTpl(compileComponentPreview(file), getStaticResources.styles, getStaticResources.scripts)
         )
     )
 })

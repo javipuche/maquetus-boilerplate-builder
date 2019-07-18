@@ -1,4 +1,4 @@
-const documentationTpl = (content) => `
+const documentationTpl = (content, navigation) => `
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -10,7 +10,13 @@ const documentationTpl = (content) => `
         <link rel="stylesheet" href="/docs/css/documentation.css" />
     </head>
     <body>
-        ${content}
+        <div class="c-layout">
+            ${navigation}
+
+            <main class="c-layout__content">
+                ${content}
+            </main>
+        </div>
 
         <script type="application/javascript">
             function resizeIframe(obj) {

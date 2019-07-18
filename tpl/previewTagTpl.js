@@ -1,4 +1,4 @@
-const iframeComponentPreviewTpl = (url, hbsCode, html) => `
+const previewTagTpl = (url, hbsCode, html) => `
     <div class="c-tabs">
         <div class="c-tabs__nav">
             <button class="c-tabs__title">Result</button>
@@ -17,4 +17,4 @@ const iframeComponentPreviewTpl = (url, hbsCode, html) => `
     </div>
 `
 
-module.exports = iframeComponentPreviewTpl
+module.exports = previewTagTpl

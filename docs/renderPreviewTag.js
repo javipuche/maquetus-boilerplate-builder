@@ -1,17 +1,14 @@
 const fs = require('fs')
 const glob = require('glob')
-const folders = require('../lib/folders')
-const markdownToHtml = require('../lib/markdownToHtml')
 const compileComponentPreview = require('./compileComponentPreview')
+const folders = require('../lib/folders')
 const renderCode = require('../lib/renderCode')
 const previewTagTpl = require('../tpl/previewTagTpl')
 const config = require('../config.json')
 
-const componentPreviewTag = (file) => {
-    const content = fs.readFileSync(file, 'utf8')
+const renderPreviewTag = (html) => {
     const previewRegexp = /(?:<p>)?@preview\((.*)\)(?:<\/p>)?/gm
 
-    let html = markdownToHtml(content)
     let match = previewRegexp.exec(html)
 
     while (match !== null) {
@@ -34,4 +31,4 @@ const componentPreviewTag = (file) => {
     return html
 }
 
-module.exports = componentPreviewTag
+module.exports = renderPreviewTag

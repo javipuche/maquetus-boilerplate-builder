@@ -1,4 +1,4 @@
-const componentPreviewTpl = (html, styles) => `
+const componentPreviewTpl = (html, styles, scripts) => `
     <!DOCTYPE html>
     <html lang="es">
         <head>
@@ -10,6 +10,8 @@ const componentPreviewTpl = (html, styles) => `
         </head>
         <body style="margin:0;">
             ${html}
+
+            ${scripts}
         </body>
     </html>
 `

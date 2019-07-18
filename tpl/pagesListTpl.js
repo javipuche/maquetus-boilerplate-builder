@@ -89,13 +89,11 @@ const indexPagesTpl = () => `
         </head>
         <body>
             <section class="container">
+                <h4>Pages</h4>
                 <ul class="list first">
                     <li class="list__item">
-                        <a class="list__link" href="/docs">Documentación</a>
+                        <a class="list__link" href="/docs">Documentation</a>
                     </li>
-                </ul>
-                <h4>Páginas</h4>
-                <ul class="list first">
                     {{#if links}}
                         {{#each links}}
                             {{> pagesList _this=this}}

@@ -1,8 +1,11 @@
 const glob = require('glob')
 const { normalize, join, extname } = require('path')
 const compileComponentPreview = require('./compileComponentPreview')
-const renderPreviewTag = require('./renderPreviewTag')
+const renderPage = require('./renderPage')
 const generateStyleLinks = require('./generateStyleLinks')
+const generateScriptSources = require('./generateScriptSources')
+const generateNavigation = require('./generateNavigation')
+const renderPreviewTag = require('./renderPreviewTag')
 const config = require('../config.json')
 const folders = require('../lib/folders')
 const componentPreviewTpl = require('../tpl/componentPreviewTpl')
@@ -14,8 +17,7 @@ const routes = []
 
 const createUrl = (file, srcPath, distPath) => {
     let url = normalize(file).split(join(srcPath, '/'))[1].replace(extname(file), '').replace(/\\/g, '/')
-    url = url === 'index' ? `/${distPath}` : `/${distPath}/${url}.html`
-    return url
+    return `/${distPath}/${url}.html`
 }
 
 const createRoute = (url, documentCode) => {
@@ -31,12 +33,20 @@ const createRoute = (url, documentCode) => {
 
 components.forEach((file) => {
     const url = createUrl(file, folders.src.components, config.sources.componentPreviews)
-    routes.push(createRoute(url, () => componentPreviewTpl(compileComponentPreview(file), generateStyleLinks())))
+    routes.push(
+        createRoute(url, () =>
+            componentPreviewTpl(compileComponentPreview(file), generateStyleLinks(), generateScriptSources())
+        )
+    )
 })
 
 docsPages.forEach((file) => {
     const url = createUrl(file, folders.src.docs, config.sources.docs)
-    routes.push(createRoute(url, () => documentationTpl(renderPreviewTag(file))))
+    routes.push(
+        createRoute(url, () =>
+            documentationTpl(renderPage(file, renderPreviewTag), generateNavigation())
+        )
+    )
 })
 
 module.exports = routes

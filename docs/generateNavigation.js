@@ -27,7 +27,7 @@ const getLinks = () =>
         let match = previewRegexp.exec(html)
         let items = []
         const fileName = basename(file)
-        const pageSlug = `/${config.sources.docs}${normalize(file).split(folders.src.docs)[1].replace(extname(file), '.html')}`
+        const pageSlug = `/${config.sources.docs}${file.split(folders.src.docs)[1].replace(extname(file), '.html')}`
 
         while (match !== null) {
             setLinkElement(match[1], stringToSlug(match[2]), match[2], items, pageSlug)

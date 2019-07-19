@@ -42,14 +42,14 @@
   --color-primary-dark: #67a3de;
   --color-secondary: #91e4e7;
   --color-shade-0: #FFFFFF;
-  --color-shade-100: #F8F9F9;
-  --color-shade-200: #EDEFF0;
-  --color-shade-300: #E2E4E6;
-  --color-shade-400: #D6DADC;
-  --color-shade-500: #838C91;
-  --color-shade-600: #676D70;
-  --color-shade-700: #333333;
-  --color-shade-800: #222222;
+  --color-shade-100: #f7fafc;
+  --color-shade-200: #e3e8ee;
+  --color-shade-300: #c1c9d2;
+  --color-shade-400: #a3acb9;
+  --color-shade-500: #8792a2;
+  --color-shade-600: #697386;
+  --color-shade-700: #3c4257;
+  --color-shade-800: #2a2f45;
   --color-shade-900: #000000;
   --radius-s: 4px;
   --radius-m: 8px;
@@ -67,7 +67,8 @@
   --font-family: var(--font-family-primary);
   --font-size: var(--font-size-m);
   --line-height: var(--line-height-m);
-  --space-tags-cms: var(--space-m)
+  --space-tags-cms: var(--space-m);
+  --border-color: var(--color-shade-200);
 }
 
 *, *::after, *::before {
@@ -147,19 +148,55 @@ html {
   -moz-osx-font-smoothing: grayscale
 }
 
-body {
-  padding: 24px;
+/* -----------------------------------------------------------------------------
+ * LAYOUT
+ */
+
+.c-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
 }
 
-ul ul {
-  margin-left: 30px;
+.c-layout__nav {
+  border-right: 1px solid var(--border-color);
+  padding: var(--space-m);
 }
+
+
+/* -----------------------------------------------------------------------------
+ * NAV
+ */
+
+.c-nav {
+
+}
+
+.c-nav > .c-nav__list > .c-nav__item > .c-nav__link {
+  color: red;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.c-nav > .c-nav__list > .c-nav__item > .c-nav__list > .c-nav__item:first-child > .c-nav__link {
+  display: none;
+}
+
+.c-nav > .c-nav__list > .c-nav__item > .c-nav__list > .c-nav__item .c-nav__list .c-nav__list {
+  margin-left: 16px;
+}
+
 
 /* -----------------------------------------------------------------------------
  * TABS
  */
 
 .c-tabs {
+
+}
+
+.c-tabs__title {
 
 }
 
@@ -178,9 +215,6 @@ ul ul {
 .c-tabs__content {
   margin-top: var(--space-xs);
 }
-
-
-
 
 
 

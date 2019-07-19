@@ -43,7 +43,7 @@ docsPages.forEach((file) => {
     const url = createUrl(file, folders.src.docs, config.sources.docs)
     routes.push(
         createRoute(url, () =>
-            documentationTpl(renderPage(file, renderPreviewTag), generateNavigation())
+            documentationTpl(renderPage(file, renderPreviewTag).html, generateNavigation(), renderPage(file, renderPreviewTag).attributes)
         )
     )
 })

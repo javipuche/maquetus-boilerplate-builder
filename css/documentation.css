@@ -179,9 +179,9 @@ html {
   display: block;
 }
 
-.c-nav > .c-nav__list > .c-nav__item > .c-nav__list > .c-nav__item:first-child > .c-nav__link {
+/* .c-nav > .c-nav__list > .c-nav__item > .c-nav__list > .c-nav__item:first-child > .c-nav__link {
   display: none;
-}
+} */
 
 .c-nav > .c-nav__list > .c-nav__item > .c-nav__list > .c-nav__item .c-nav__list .c-nav__list {
   margin-left: 16px;

@@ -22,7 +22,8 @@ const setLinkElement = (level, slug, text, items, pageSlug) => {
 
 const getLinks = () =>
     files.map((file) => {
-        const html = renderPage(file)
+        const html = renderPage(file).html
+        const attributes = renderPage(file).attributes
         const previewRegexp = /<h([1-6])[^>]*>(.*)<\/h[1-6]>/g
         let match = previewRegexp.exec(html)
         let items = []
@@ -35,13 +36,13 @@ const getLinks = () =>
         }
 
         return {
-            text: items.length ? items[0].text : fileName,
+            text: attributes.pageTitle ? attributes.pageTitle : fileName,
             slug: pageSlug,
             items: items
         }
     })
 
-const navigationElement = ({ slug, text, pageSlug }) => `<a href="${pageSlug ? pageSlug + slug : slug}" class="c-nav__link">${text}</a>`
+const navigationElement = ({ slug, text, pageSlug, level }) => level ? `<a href="${pageSlug ? pageSlug + slug : slug}" class="c-nav__link">${text}</a>` : `<button class="c-nav__btn">${text}</button>`
 
 const renderNavigationList = (items) => `
     <ul class="c-nav__list">
@@ -50,6 +51,13 @@ const renderNavigationList = (items) => `
         : `<li class="c-nav__item">${navigationElement(item)}</li>`).join('')}
     </ul>
 `
+// const renderNavigationList = (items) => {
+//     const a = items.map(item => {
+//         console.log(item)
+//     })
+//
+//     console.log(a)
+// }
 
 const generateNavigation = () => `
     <nav class="c-layout__nav c-nav">

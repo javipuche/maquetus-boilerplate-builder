@@ -1,5 +1,6 @@
 const fs = require('fs')
 const glob = require('glob')
+var beautifyHtml = require('js-beautify').html
 const compileComponentPreview = require('./compileComponentPreview')
 const folders = require('../lib/folders')
 const renderCodeSnippet = require('../lib/renderCodeSnippet')
@@ -20,7 +21,7 @@ const renderPreviewTag = (html) => {
             const hbsCode = fs.readFileSync(componentFile, 'utf8')
             const url = `/${config.sources.componentPreviews}/${componentName}.html`
             const hbsSnippet = renderCodeSnippet(hbsCode)
-            const htmlSnippet = renderCodeSnippet(compileComponentPreview(componentFile))
+            const htmlSnippet = renderCodeSnippet(beautifyHtml(compileComponentPreview(componentFile)))
 
             replacement = previewTagTpl(url, hbsSnippet, htmlSnippet, componentName)
         } else {

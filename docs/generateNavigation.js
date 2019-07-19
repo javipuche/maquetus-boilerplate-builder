@@ -8,7 +8,7 @@ const files = glob.sync(`${folders.src.docs}/**/*.md`)
 
 const setLinkElement = (level, slug, text, items, pageSlug) => {
     if (items.length && level > items[items.length - 1].level) {
-        items = setLinkElement(level, slug, text, items[items.length - 1].items)
+        items = setLinkElement(level, slug, text, items[items.length - 1].items, pageSlug)
     } else {
         items.push({
             level: level,

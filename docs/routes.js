@@ -34,7 +34,7 @@ components.forEach((file) => {
     const url = createUrl(file, folders.src.components, config.sources.componentPreviews)
     routes.push(
         createRoute(url, () =>
-            componentPreviewTpl(compileComponentPreview(file), getStaticResources.styles, getStaticResources.scripts)
+            componentPreviewTpl(renderPreviewTag(compileComponentPreview(file)), getStaticResources.styles, getStaticResources.scripts)
         )
     )
 })

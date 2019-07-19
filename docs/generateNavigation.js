@@ -1,5 +1,5 @@
 const glob = require('glob')
-const { basename, normalize, extname } = require('path')
+const { basename, extname } = require('path')
 const renderPage = require('./renderPage')
 const config = require('../config.json')
 const folders = require('../lib/folders')

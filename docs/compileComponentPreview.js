@@ -2,9 +2,9 @@ const fs = require('fs')
 const hbs = require('handlebars')
 const getComponentPreviewData = require('./getComponentPreviewData')
 
-const compileComponentPreview = (file) => {
+const compileComponentPreview = (file, data) => {
+    data = data || getComponentPreviewData(file)
     const content = fs.readFileSync(file, 'utf8')
-    const data = getComponentPreviewData(file)
     const template = hbs.compile(content)
     return template(data)
 }

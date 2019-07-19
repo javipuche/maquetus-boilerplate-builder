@@ -2,13 +2,12 @@ const fs = require('fs')
 const glob = require('glob')
 const compileComponentPreview = require('./compileComponentPreview')
 const folders = require('../lib/folders')
-const renderCode = require('../lib/renderCode')
+const renderCodeSnippet = require('../lib/renderCodeSnippet')
 const previewTagTpl = require('../tpl/previewTagTpl')
 const config = require('../config.json')
 
 const renderPreviewTag = (html) => {
-    const previewRegexp = /(?:<p>)?@preview\((.*)\)(?:<\/p>)?/gm
-
+    const previewRegexp = /(?:<p>)?@preview\((.*?)(?:,\s*(.*?))?\)(?:<\/p>)?/g
     let match = previewRegexp.exec(html)
 
     while (match !== null) {
@@ -19,7 +18,11 @@ const renderPreviewTag = (html) => {
 
         if (componentFile) {
             const hbsCode = fs.readFileSync(componentFile, 'utf8')
-            replacement = previewTagTpl(`/${config.sources.componentPreviews}/${componentName}.html`, renderCode(hbsCode), renderCode(compileComponentPreview(componentFile)))
+            const url = `/${config.sources.componentPreviews}/${componentName}.html`
+            const hbsSnippet = renderCodeSnippet(hbsCode)
+            const htmlSnippet = renderCodeSnippet(compileComponentPreview(componentFile))
+
+            replacement = previewTagTpl(url, hbsSnippet, htmlSnippet, componentName)
         } else {
             replacement = `<p class="c-msg c-msg--error">Component "${componentName}" not exists.</p>`
         }

@@ -1,5 +1,6 @@
-const previewTagTpl = (url, hbsCode, html) => `
+const previewTagTpl = (url, hbsCode, html, title) => `
     <div class="c-tabs">
+        ${title ? '<div class="c-tabs__title">' + title + '</div>' : ''}
         <div class="c-tabs__nav">
             <button class="c-tabs__title">Result</button>
             <button class="c-tabs__title">HBS</button>

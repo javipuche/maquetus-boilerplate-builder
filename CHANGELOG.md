@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/javipuche/maquetus-boilerplate-builder/compare/v1.1.1...v1.1.2) (2019-07-22)
+
+
+### Bug Fixes
+
+* Arreglado un conflicto con el helper eq del listado de páginas ([a3ded2f](https://github.com/javipuche/maquetus-boilerplate-builder/commit/a3ded2f))
+
+
+### Build System
+
+* Actualizadas dependencias ([3a3bdd3](https://github.com/javipuche/maquetus-boilerplate-builder/commit/3a3bdd3))
+
+
+
 ### [1.1.1](https://github.com/javipuche/maquetus-boilerplate-builder/compare/v1.1.0...v1.1.1) (2019-07-22)
 
 

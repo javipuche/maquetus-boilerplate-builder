@@ -4,8 +4,6 @@
   "description": "Builder para diferentes boilerplates de maquetación web que usan Maquetus.",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp --gulpfile index.js --require @babel/register --server --watch",
-    "build": "gulp --gulpfile index.js --require @babel/register build --production",
     "release": "standard-version"
   },
   "repository": {

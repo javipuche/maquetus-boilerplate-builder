@@ -21,7 +21,7 @@ const renderPreviewTag = (html) => {
             const hbsCode = fs.readFileSync(componentFile, 'utf8')
             const url = `/${config.sources.componentPreviews}/${componentName}.html`
             const hbsSnippet = renderCodeSnippet(hbsCode)
-            const htmlSnippet = renderCodeSnippet(beautifyHtml(compileComponentPreview(componentFile)))
+            const htmlSnippet = renderCodeSnippet(beautifyHtml(compileComponentPreview(componentFile).replace(/\s+(?=(?:(?:[^"]*"){2})*[^"]*"[^"]*$)/g, ' ')))
 
             replacement = previewTagTpl(url, hbsSnippet, htmlSnippet, componentName)
         } else {

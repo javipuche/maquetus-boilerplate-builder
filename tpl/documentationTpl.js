@@ -11,18 +11,15 @@ const documentationTpl = (content, navigation, attributes) => `
     </head>
     <body>
         <div class="c-layout">
-            ${navigation}
-
-            <main class="c-layout__content">
+            <div id="nav" class="c-layout__nav">
+                ${navigation}
+            </div>
+            <main id="content" class="c-layout__content s-cms">
                 ${content}
             </main>
         </div>
 
-        <script type="application/javascript">
-            function resizeIframe(obj) {
-                obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-            }
-        </script>
+        <script src="/docs/js/documentation.js" charset="utf-8" defer></script>
     </body>
 </html>
 `

@@ -51,16 +51,9 @@ const renderNavigationList = (items) => `
         : `<li class="c-nav__item">${navigationElement(item)}</li>`).join('')}
     </ul>
 `
-// const renderNavigationList = (items) => {
-//     const a = items.map(item => {
-//         console.log(item)
-//     })
-//
-//     console.log(a)
-// }
 
 const generateNavigation = () => `
-    <nav class="c-layout__nav c-nav">
+    <nav class="c-nav">
         ${renderNavigationList(getLinks())}
     </nav>
 `

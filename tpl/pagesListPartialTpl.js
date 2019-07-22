@@ -1,5 +1,5 @@
 const indexPagesTpl = () => `
-    {{#eq _this.type 'file'}}
+    {{#pagesListEq _this.type 'file'}}
             <li class="list__item">
                 <a  class="list__link" href="{{ _this.url }}">{{ _this.link }}</a>
             </li>
@@ -18,7 +18,7 @@ const indexPagesTpl = () => `
                     {{/if}}
                 </ul>
             </li>
-    {{/eq}}
+    {{/pagesListEq}}
 `
 
 module.exports = indexPagesTpl

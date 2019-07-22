@@ -5,8 +5,10 @@ const scriptTpl = (script) => `<script src="${script}" charset="utf-8" defer></s
 const styleTpl = (style) => `<link rel="stylesheet" href="${style}" />\n`
 
 const getStaticResources = (assets, tpl) => {
-    const configDocs = JSON.parse(fs.readFileSync(`${folders.src.docs}/config.json`, 'utf8'))
-    return configDocs[assets].map((source) => tpl(source)).join('')
+    if (fs.existsSync(`${folders.src.docs}/config.json`)) {
+        const configDocs = JSON.parse(fs.readFileSync(`${folders.src.docs}/config.json`, 'utf8'))
+        return configDocs[assets].map((source) => tpl(source)).join('')
+    }
 }
 
 module.exports = {

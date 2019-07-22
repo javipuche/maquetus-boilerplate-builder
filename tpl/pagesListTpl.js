@@ -92,7 +92,7 @@ const indexPagesTpl = () => `
                 <h4>Pages</h4>
                 <ul class="list first">
                     <li class="list__item">
-                        <a class="list__link" href="/docs">Documentation</a>
+                        <a class="list__link" href="/docs/index.html">Documentation</a>
                     </li>
                     {{#if links}}
                         {{#each links}}

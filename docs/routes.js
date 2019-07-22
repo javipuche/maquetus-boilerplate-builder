@@ -30,22 +30,26 @@ const createRoute = (url, documentCode) => {
     }
 }
 
-components.forEach((file) => {
-    const url = createUrl(file, folders.src.components, config.sources.componentPreviews)
-    routes.push(
-        createRoute(url, () =>
-            componentPreviewTpl(renderPreviewTag(compileComponentPreview(file)), getStaticResources.styles, getStaticResources.scripts)
+if (components) {
+    components.forEach((file) => {
+        const url = createUrl(file, folders.src.components, config.sources.componentPreviews)
+        routes.push(
+            createRoute(url, () =>
+                componentPreviewTpl(renderPreviewTag(compileComponentPreview(file)), getStaticResources.styles, getStaticResources.scripts)
+            )
         )
-    )
-})
+    })
+}
 
-docsPages.forEach((file) => {
-    const url = createUrl(file, folders.src.docs, config.sources.docs)
-    routes.push(
-        createRoute(url, () =>
-            documentationTpl(renderPage(file, renderPreviewTag).html, generateNavigation(), renderPage(file, renderPreviewTag).attributes)
+if (docsPages) {
+    docsPages.forEach((file) => {
+        const url = createUrl(file, folders.src.docs, config.sources.docs)
+        routes.push(
+            createRoute(url, () =>
+                documentationTpl(renderPage(file, renderPreviewTag).html, generateNavigation(), renderPage(file, renderPreviewTag).attributes)
+            )
         )
-    )
-})
+    })
+}
 
 module.exports = routes

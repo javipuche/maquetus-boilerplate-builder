@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/javipuche/maquetus-boilerplate-builder/compare/v1.0.2...v1.1.0) (2019-07-22)
+
+
+### Bug Fixes
+
+* Arreglados los enlaces de la documentación ([4845afe](https://github.com/javipuche/maquetus-boilerplate-builder/commit/4845afe))
+* Windows slash ([b4daf68](https://github.com/javipuche/maquetus-boilerplate-builder/commit/b4daf68))
+
+
+### Features
+
+* Añadido sistema de documentación de componentes ([061904b](https://github.com/javipuche/maquetus-boilerplate-builder/commit/061904b))
+
+
+
 ### [1.0.2](https://github.com/javipuche/maquetus-boilerplate-builder/compare/v1.0.1...v1.0.2) (2019-07-15)
 
 

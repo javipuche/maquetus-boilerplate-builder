@@ -8,8 +8,7 @@ const previewTagTpl = require('../tpl/previewTagTpl')
 const config = require('../config.json')
 
 const renderPreviewTag = (html) => {
-    console.log(html)
-    const previewRegexp = /(?:<p>)?@preview\((.*?)(?:,\s*(.*?))?\)(?:<\/p>)?(?![^]*<\/code>)/g
+    const previewRegexp = /(?:<p>)?@preview\((.*?)(?:,\s*(.*?))?\)(?:<\/p>)?(?!<\/code>)/g
     let match = previewRegexp.exec(html)
 
     while (match !== null) {

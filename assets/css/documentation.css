@@ -35,7 +35,7 @@
   --color-primary-dark: #67a3de;
   --color-secondary: #91e4e7;
   --color-shade-0: #FFFFFF;
-  --color-shade-100: #f7fafc;
+  --color-shade-100: #f0f3f5;
   --color-shade-200: #e3e8ee;
   --color-shade-300: #c1c9d2;
   --color-shade-400: #a3acb9;
@@ -57,9 +57,6 @@
   --wrapper-l: 1200px;
   --wrapper-xl: 1400px;
   --wrapper-2xl: 1600px;
-  --font-family: var(--font-family-primary);
-  --font-size: var(--font-size-m);
-  --line-height: var(--line-height-m);
   --space-tags-cms: var(--space-m);
   --border-color: var(--color-shade-200);
   --c-tabs-background-color-title: #262835;
@@ -142,6 +139,12 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-shade-600);
+  scroll-behavior: smooth;
+}
+
+pre {
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 pre, code {
@@ -151,6 +154,22 @@ pre, code {
 code {
   font-size: var(--font-size-s);
   line-height: var(--line-height-2xl);
+  background-color: var(--color-shade-100);
+  padding: var(--space-2xs);
+  color: var(--color-primary-dark);
+  border-radius: var(--radius-s);
+}
+
+pre code {
+  padding: 0;
+  color: inherit;
+  border-radius: 0;
+}
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
 }
 
 /* -----------------------------------------------------------------------------
@@ -168,11 +187,13 @@ code {
   border-right: 1px solid var(--border-color);
   padding: var(--space-s);
   grid-area: nav;
+  min-width: 1px;
 }
 
 .c-layout__content {
-  padding: var(--space-7xl) 5vw;
+  padding: var(--space-2xl) 5vw;
   grid-area: content;
+  min-width: 1px;
 }
 
 
@@ -281,7 +302,30 @@ code {
 .s-cms h4,
 .s-cms h5,
 .s-cms h6 {
+  position: relative;
   line-height: var(--line-height-xl);
+}
+
+.s-cms h1::before,
+.s-cms h2::before,
+.s-cms h3::before,
+.s-cms h4::before,
+.s-cms h5::before,
+.s-cms h6::before {
+  content: "#";
+  color: var(--color-primary);
+  position: absolute;
+  left: calc(var(--space-m) * -1);
+  opacity: 0;
+}
+
+.s-cms h1:target::before,
+.s-cms h2:target::before,
+.s-cms h3:target::before,
+.s-cms h4:target::before,
+.s-cms h5:target::before,
+.s-cms h6:target::before {
+  opacity: 1;
 }
 
 .s-cms h1:not(:first-child),
@@ -295,10 +339,7 @@ code {
 
 .s-cms h1,
 .s-cms h2,
-.s-cms h3 {
-  font-weight: 300;
-}
-
+.s-cms h3,
 .s-cms h4,
 .s-cms h5,
 .s-cms h6 {
@@ -329,6 +370,52 @@ code {
   font-size: var(--font-size-m);
 }
 
+.s-cms th {
+  text-align: left;
+  background-color: var(--color-shade-100);
+}
+
+.s-cms th,
+.s-cms td {
+  padding: var(--space-2xs) var(--space-xs);
+  border: 1px solid var(--border-color);
+}
+
+.s-cms ul li + li,
+.s-cms ol li + li {
+  margin-top: var(--space-s);
+}
+
+.s-cms ul li::before,
+.s-cms ol li::before {
+  content: "-";
+  margin-right: var(--space-xs);
+  color: var(--color-primary-dark);
+}
+
+.s-cms ol {
+  counter-reset: orderList;
+}
+
+.s-cms ol li::before {
+  counter-increment: orderList;
+  content: counter(orderList) ".";
+  margin-right: var(--space-2xs);
+  color: var(--color-primary-dark);
+}
+
+.s-cms a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: all .3s;
+}
+
+.s-cms a:focus,
+.s-cms a:active,
+.s-cms a:hover {
+  color: var(--color-primary-dark);
+}
+
 /* -----------------------------------------------------------------------------
  * CODE
  */
@@ -352,7 +439,8 @@ code {
  */
 
 .c-tabs {
-
+  margin-top: var(--space-tags-cms);
+  margin-bottom: var(--space-tags-cms);
 }
 
 .c-tabs__box {
@@ -417,13 +505,9 @@ code {
 }
 
 
-
-
-/*
-
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
+/* -----------------------------------------------------------------------------
+ * HLJS
+ */
 
 .hljs {
   display: block;
@@ -456,7 +540,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 .hljs-string,
 .hljs-doctag {
-  color: #d14;
+  color: var(--color-primary-dark);
 }
 
 .hljs-title,

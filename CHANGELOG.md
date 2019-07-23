@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/javipuche/maquetus-boilerplate-builder/compare/v1.1.7...v1.2.0) (2019-07-23)
+
+
+### Features
+
+* Ahora la navegación de la documentación se puede ordenar ([3b48042](https://github.com/javipuche/maquetus-boilerplate-builder/commit/3b48042))
+
+
+
 ### [1.1.7](https://github.com/javipuche/maquetus-boilerplate-builder/compare/v1.1.6...v1.1.7) (2019-07-23)
 
 

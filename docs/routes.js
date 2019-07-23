@@ -45,9 +45,10 @@ if (docsPages) {
     docsPages.forEach((file) => {
         const url = createUrl(file, folders.src.docs, config.sources.docs)
         routes.push(
-            createRoute(url, () =>
-                documentationTpl(renderPage(file, renderPreviewTag).html, generateNavigation(), renderPage(file, renderPreviewTag).attributes)
-            )
+            createRoute(url, () => {
+                let renderedPage = renderPage(file, renderPreviewTag)
+                return documentationTpl(renderedPage.html, generateNavigation(), renderedPage.attributes)
+            })
         )
     })
 }

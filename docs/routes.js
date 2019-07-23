@@ -15,7 +15,7 @@ const docsPages = glob.sync(`${folders.src.docs}/**/*.md`)
 const routes = []
 
 const createUrl = (file, srcPath, distPath) => {
-    let url = normalize(file).split(join(srcPath, '/'))[1].replace(extname(file), '').replace(/\\/g, '/')
+    const url = normalize(file).split(join(srcPath, '/'))[1].replace(extname(file), '').replace(/\\/g, '/')
     return `/${distPath}/${url}.html`
 }
 
@@ -24,7 +24,7 @@ const createRoute = (url, documentCode) => {
         route: url,
         handle: async (req, res, next) => {
             res.setHeader('content-type', 'text/html')
-            res.write(documentCode())
+            res.write(documentCode(req.originalUrl))
             res.end()
         }
     }
@@ -45,9 +45,9 @@ if (docsPages) {
     docsPages.forEach((file) => {
         const url = createUrl(file, folders.src.docs, config.sources.docs)
         routes.push(
-            createRoute(url, () => {
-                let renderedPage = renderPage(file, renderPreviewTag)
-                return documentationTpl(renderedPage.html, generateNavigation(), renderedPage.attributes)
+            createRoute(url, (url) => {
+                const renderedPage = renderPage(file, true)
+                return documentationTpl(renderedPage.html, generateNavigation(url), renderedPage.attributes)
             })
         )
     })

@@ -210,15 +210,37 @@ table {
 
 }
 
+.c-nav__list {
+  display: none;
+}
+
+.c-nav__list.is-open {
+  display: block;
+}
+
 .c-nav__btn {
   text-transform: uppercase;
   font-size: var(--font-size-xs);
   font-weight: 700;
   padding: var(--space-xs);
-  margin-top: var(--space-l);
+  margin-top: var(--space-xs);
   margin-bottom: var(--space-xs);
   letter-spacing: .05em;
+  display: block;
+  display: flex;
+  justify-content: space-between;
 }
+
+/* .c-nav__btn::after {
+  content: "";
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  height: 8px;
+  width: 8px;
+  display: block;
+  transform: rotate(-136deg);
+  margin-left: 4px;
+} */
 
 .c-nav__item {
   font-size: var(--font-size-s);

@@ -400,7 +400,7 @@ hr {
 .s-cms h4:not(:first-child),
 .s-cms h5:not(:first-child),
 .s-cms h6:not(:first-child) {
-  margin-top: var(--space-4xl);
+  margin-top: var(--space-2xl);
 }
 
 .s-cms h1,
@@ -499,7 +499,6 @@ hr {
   background-color: var(--c-tabs-background-color-content);
   padding: var(--space-m);
   border-radius: var(--radius-s);
-  margin-top: var(--space-tags-cms);
   margin-bottom: var(--space-tags-cms);
   overflow-x: auto;
 }
@@ -514,7 +513,6 @@ hr {
  */
 
 .c-tabs {
-  margin-top: var(--space-tags-cms);
   margin-bottom: var(--space-tags-cms);
   min-width: 1px;
 }

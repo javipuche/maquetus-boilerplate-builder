@@ -8,6 +8,7 @@ const renderPage = (file, force) => {
     if (page[file] && !force) {
         return page[file]
     }
+
     const content = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : file
     const attributes = fm(content).attributes
     const body = fm(content).body

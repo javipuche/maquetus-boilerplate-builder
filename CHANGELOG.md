@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/javipuche/maquetus-boilerplate-builder/compare/v1.2.1...v1.3.0) (2019-07-25)
+
+
+### Features
+
+* Ahora la navegación de la documentación tiene los submenus despegables ([698b5de](https://github.com/javipuche/maquetus-boilerplate-builder/commit/698b5de))
+* Añadido enlace en la vista previa del componente para que lo habrá en una nueva ventana ([54082f6](https://github.com/javipuche/maquetus-boilerplate-builder/commit/54082f6))
+
+
+
 ### [1.2.1](https://github.com/javipuche/maquetus-boilerplate-builder/compare/v1.2.0...v1.2.1) (2019-07-23)
 
 

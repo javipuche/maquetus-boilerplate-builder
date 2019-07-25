@@ -470,15 +470,23 @@ hr {
   color: var(--color-primary-dark);
 }
 
-.s-cms a {
+.s-cms p a
+.s-cms table a
+.s-cms ul a, {
   color: var(--color-primary);
   text-decoration: underline;
   transition: all .3s;
 }
 
-.s-cms a:focus,
-.s-cms a:active,
-.s-cms a:hover {
+.s-cms p a:focus,
+.s-cms p a:active,
+.s-cms p a:hover,
+.s-cms table a:focus,
+.s-cms table a:active,
+.s-cms table a:hover,
+.s-cms ul a:focus,
+.s-cms ul a:active,
+.s-cms ul a:hover {
   color: var(--color-primary-dark);
 }
 
@@ -508,10 +516,12 @@ hr {
 .c-tabs {
   margin-top: var(--space-tags-cms);
   margin-bottom: var(--space-tags-cms);
+  min-width: 1px;
 }
 
 .c-tabs__box {
-
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 
 .c-tabs__title {
@@ -522,12 +532,34 @@ hr {
 }
 
 .c-tabs__nav {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: start;
+  display: flex;
   background-color: var(--c-tabs-background-color-title);
   border-top-left-radius: var(--radius-s);
   border-top-right-radius: var(--radius-s);
+  width: 100%;
+  overflow-x: auto;
+}
+
+.c-tabs__actions {
+  display: flex;
+  margin-left: auto;
+  padding-left: var(--space-xs);
+  padding-right: var(--space-xs);
+  border-left: 1px solid var(--color-shade-600);
+}
+
+.c-tabs__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: var(--space-xs);
+  padding-right: var(--space-xs);
+  transition: all .3s;
+}
+
+.c-tabs__action:focus,
+.c-tabs__action:hover {
+  color: var(--color-primary);
 }
 
 .c-tabs__item {

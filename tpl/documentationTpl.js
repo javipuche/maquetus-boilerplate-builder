@@ -19,6 +19,7 @@ const documentationTpl = (content, navigation, attributes) => `
             </main>
         </div>
 
+        <script src="https://kit.fontawesome.com/7256df49cf.js"></script>
         <script src="/docs/js/documentation.js" charset="utf-8" defer></script>
     </body>
 </html>

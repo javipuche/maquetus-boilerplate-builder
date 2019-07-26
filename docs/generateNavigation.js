@@ -66,8 +66,11 @@ const renderNavigationList = (items, isActive = false) => `
     </ul>
 `
 
+const logo = (src) => src ? `<img class="c-logo" src="${src}" alt="Logo" />` : ''
+
 const generateNavigation = (url) => `
     <nav class="c-nav">
+        ${logo(configDocs().logo)}
         ${renderNavigationList(sortLinks(getLinks(url)))}
     </nav>
 `

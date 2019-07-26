@@ -185,8 +185,6 @@ table {
 
 .c-layout__nav {
   border-right: 1px solid var(--border-color);
-  padding-top: var(--space-s);
-  padding-bottom: var(--space-s);
   grid-area: nav;
   min-width: 1px;
 }
@@ -238,7 +236,7 @@ hr {
 .c-nav {
   position: sticky;
   top: 0;
-  max-height: calc(100vh - var(--space-l));
+  max-height: 100vh;
   overflow: auto;
   scroll-behavior: smooth;
   padding-left: var(--space-s);
@@ -339,6 +337,14 @@ hr {
   margin-left: var(--space-s);
 }
 
+/* -----------------------------------------------------------------------------
+ * LOGO
+ */
+
+.c-logo {
+  margin-top: var(--space-s);
+  margin-bottom: var(--space-s);
+}
 
 /* -----------------------------------------------------------------------------
  * CMS

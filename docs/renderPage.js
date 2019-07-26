@@ -12,7 +12,8 @@ const renderPage = (file, force) => {
     const content = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : file
     const attributes = fm(content).attributes
     const body = fm(content).body
-    const html = renderPreviewTag(markdownToHtml(body))
+    const regexp = /^##\s/gm
+    const html = renderPreviewTag(markdownToHtml(body.replace(regexp, '<hr class="c-separator">\n\n## ')))
 
     page[file] = {
         attributes,

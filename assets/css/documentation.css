@@ -172,13 +172,6 @@ table {
   display: block;
 }
 
-hr {
-  margin-top: var(--space-7xl);
-  margin-bottom: var(--space-2xl);
-  border: 0;
-  border-top: 1px solid var(--border-color);
-}
-
 /* -----------------------------------------------------------------------------
  * LAYOUT
  */
@@ -211,9 +204,31 @@ hr {
   grid-column: 2/3;
 }
 
-.c-layout__content > hr {
+.c-layout__content > .c-separator {
   grid-column: 1/-1;
 }
+
+
+/* -----------------------------------------------------------------------------
+ * SEPARATOR
+ */
+
+.c-separator {
+  margin-top: var(--space-7xl);
+  margin-bottom: var(--space-2xl);
+  border: 0;
+}
+
+hr {
+  margin-top: var(--space-s);
+  margin-bottom: var(--space-l);
+}
+
+.c-separator,
+hr {
+  border-top: 1px solid var(--border-color);
+}
+
 
 /* -----------------------------------------------------------------------------
  * NAV
@@ -358,6 +373,8 @@ hr {
 .s-cms table,
 .s-cms video,
 .s-cms pre,
+.s-cms ul,
+.s-cms ol,
 .s-cms figure {
   margin-bottom: var(--space-tags-cms);
 }

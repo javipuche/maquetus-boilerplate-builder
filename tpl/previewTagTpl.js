@@ -12,7 +12,7 @@ const previewTagTpl = (url, hbsCode, html, title) => `
             </div>
         </div>
         <div class="c-tabs__content is-active" data-tabs-content="result" data-tabs-id="docs-${title}">
-            <iframe onload="resizeIframe(this)" src="${url}" frameborder="0" width="100%"></iframe>
+            <iframe src="${url}" frameborder="0" width="100%"></iframe>
         </div>
         <div class="c-tabs__content" data-tabs-content="hbs" data-tabs-id="docs-${title}">
             ${hbsCode}

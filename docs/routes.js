@@ -3,7 +3,6 @@ const { normalize, join, extname } = require('path')
 const compileComponentPreview = require('./compileComponentPreview')
 const renderPage = require('./renderPage')
 const getStaticResources = require('./getStaticResources')
-const generateNavigation = require('./generateNavigation')
 const renderPreviewTag = require('./renderPreviewTag')
 const config = require('../config.json')
 const folders = require('../lib/folders')
@@ -46,8 +45,8 @@ if (docsPages) {
         const url = createUrl(file, folders.src.docs, config.sources.docs)
         routes.push(
             createRoute(url, (url) => {
-                const renderedPage = renderPage(file, true)
-                return documentationTpl(renderedPage.html, generateNavigation(url), renderedPage.attributes)
+                const renderedPage = renderPage(file, url)
+                return documentationTpl(renderedPage.html, renderedPage.navigation, renderedPage.attributes)
             })
         )
     })

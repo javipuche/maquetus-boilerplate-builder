@@ -1,6 +1,6 @@
 const fs = require('fs')
 const glob = require('glob')
-var beautifyHtml = require('js-beautify').html
+const beautifyHtml = require('js-beautify').html
 const compileComponentPreview = require('./compileComponentPreview')
 const folders = require('../lib/folders')
 const renderCodeSnippet = require('../lib/renderCodeSnippet')

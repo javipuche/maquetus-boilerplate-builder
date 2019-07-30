@@ -1,6 +1,5 @@
 const glob = require('glob')
 const { basename, extname } = require('path')
-const renderPage = require('./renderPage')
 const configDocs = require('./config')
 const stringToSlug = require('../utils/stringToSlug')
 const config = require('../config.json')
@@ -30,12 +29,11 @@ const setLinkElement = (level, slug, text, items, pageSlug, isActivePage) => {
 
 const sortLinks = links => links.sort((a, b) => (configDocs().navigation[a.id] || Infinity) - (configDocs().navigation[b.id] || Infinity))
 
-const getLinks = url =>
+const getLinks = (url, page) =>
     files.map((file) => {
         const filename = basename(file).replace(extname(file), '')
-        const pageRendered = renderPage(file)
-        const attributes = pageRendered.attributes
-        const html = pageRendered.html
+        const attributes = page.attributes
+        const html = page.html
         const previewRegexp = /<h([1-6])[^>]*\s(id="(.*)")?>(.*)<\/h[1-6]>/g
         let match = previewRegexp.exec(html)
         const items = []
@@ -68,10 +66,10 @@ const renderNavigationList = (items, isActive = false) => `
 
 const logo = (src) => src ? `<img class="c-logo" src="${src}" alt="Logo" />` : ''
 
-const generateNavigation = (url) => `
+const generateNavigation = (url, page) => `
     <nav class="c-nav">
         ${logo(configDocs().logo)}
-        ${renderNavigationList(sortLinks(getLinks(url)))}
+        ${renderNavigationList(sortLinks(getLinks(url, page)))}
     </nav>
 `
 

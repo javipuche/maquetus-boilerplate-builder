@@ -1,8 +1,8 @@
 const stringToSlug = (str, clean) => {
     str = str.replace(/^\s+|\s+$/g, '') // trim
     str = str.toLowerCase()
-    let from = 'àáäâèéëêìíïîòóöôùúüûñç·/_,:;'
-    let to = 'aaaaeeeeiiiioooouuuunc------'
+    const from = 'àáäâèéëêìíïîòóöôùúüûñç·/_,:;'
+    const to = 'aaaaeeeeiiiioooouuuunc------'
     for (var i = 0, l = from.length; i < l; i++) {
         str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i))
     }

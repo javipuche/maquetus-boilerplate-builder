@@ -4,6 +4,7 @@ const compileComponentPreview = require('./compileComponentPreview')
 const renderPage = require('./renderPage')
 const getStaticResources = require('./getStaticResources')
 const renderPreviewTag = require('./renderPreviewTag')
+const generateNavigation = require('./generateNavigation')
 const config = require('../config.json')
 const folders = require('../lib/folders')
 const componentPreviewTpl = require('../tpl/componentPreviewTpl')
@@ -45,8 +46,8 @@ if (docsPages) {
         const url = createUrl(file, folders.src.docs, config.sources.docs)
         routes.push(
             createRoute(url, (url) => {
-                const renderedPage = renderPage(file, url)
-                return documentationTpl(renderedPage.html, renderedPage.navigation, renderedPage.attributes)
+                const renderedPage = renderPage(file, true)
+                return documentationTpl(renderedPage.html, generateNavigation(url), renderedPage.attributes)
             })
         )
     })

@@ -1,4 +1,5 @@
 :root {
+  --space-3xs: 2px;
   --space-2xs: 4px;
   --space-xs: 8px;
   --space-s: 16px;
@@ -45,6 +46,12 @@
   --color-shade-700: #3c4257;
   --color-shade-800: #2a2f45;
   --color-shade-900: #000000;
+  --color-info: #dcfafd;
+  --color-info-dark: #0099a9;
+  --color-error: #fddcdc;
+  --color-error-dark: #a90000;
+  --color-success: #dcfde5;
+  --color-success-dark: #00a93b;
   --radius-s: 4px;
   --radius-m: 8px;
   --radius-l: 12px;
@@ -619,6 +626,57 @@ hr {
   border-radius: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * MSG
+ */
+
+.c-msg {
+  --background-color: var(--color-info);
+  --color: var(--color-info-dark);
+  --border-color: var(--color-info-dark);
+
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  color: var(--color);
+  padding: var(--space-m);
+  border-radius: var(--radius-s);
+  position: relative;
+}
+
+.c-msg::before {
+  content: "Info";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: var(--font-size-4xs);
+  background-color: var(--color);
+  color: var(--background-color);
+  display: block;
+  padding: var(--space-3xs) var(--space-xs);
+  border-bottom-right-radius: var(--radius-s);
+  font-weight: 700;
+}
+
+.c-msg--error {
+  --background-color: var(--color-error);
+  --color: var(--color-error-dark);
+  --border-color: var(--color-error-dark);
+}
+
+.c-msg--error::before {
+  content: "Error";
+}
+
+.c-msg--success {
+  --background-color: var(--color-success);
+  --color: var(--color-success-dark);
+  --border-color: var(--color-success-dark);
+}
+
+.c-msg--success::before {
+  content: "Success";
 }
 
 

@@ -203,6 +203,7 @@ table {
   min-width: 1px;
   display: grid;
   grid-template-columns: minmax(var(--space-xl), 1fr) minmax(auto, 1200px) minmax(var(--space-xl), 1fr);
+  align-content: start;
 }
 
 .c-layout__content > * {

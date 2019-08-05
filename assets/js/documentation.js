@@ -13,7 +13,6 @@ const resizeIframeHeightByContent = () => {
 const tabs = () => {
     document.querySelectorAll('[data-tabs-btn]').forEach((el) => {
         el.addEventListener('click', (event) => {
-            console.log(el)
             const id = el.dataset.tabsId
             const target = el.dataset.tabsBtn
 

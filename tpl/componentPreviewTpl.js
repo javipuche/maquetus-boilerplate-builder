@@ -8,7 +8,7 @@ const componentPreviewTpl = (html, styles, scripts) => `
             <title>Component Preview</title>
             ${styles}
         </head>
-        <body style="margin:0;">
+        <body style="margin:0; padding: 0.1px;">
             ${html}
 
             ${scripts}

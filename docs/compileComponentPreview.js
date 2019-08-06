@@ -2,6 +2,7 @@ const fs = require('fs')
 const hbs = require('handlebars')
 const getComponentPreviewData = require('./getComponentPreviewData')
 const trimQuotes = require('../utils/trimQuotes')
+const trimBetweenHtmlTags = require('../utils/trimBetweenHtmlTags')
 
 const compileComponentPreview = (file, data) => {
     data = data || getComponentPreviewData(file)
@@ -9,7 +10,7 @@ const compileComponentPreview = (file, data) => {
     const template = hbs.compile(content, {
         noEscape: true
     })
-    return trimQuotes(template(data))
+    return trimBetweenHtmlTags(trimQuotes(template(data)))
 }
 
 module.exports = compileComponentPreview

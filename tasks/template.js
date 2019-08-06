@@ -15,7 +15,8 @@ const template = () =>
             helpers: folders.src.helpers,
             data: folders.src.data,
             hbsOptions: {
-                explicitPartialContext: true
+                explicitPartialContext: true,
+                noEscape: true
             }
         }))
         .pipe(plumber())

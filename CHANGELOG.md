@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.14](https://github.com/javipuche/maquetus-boilerplate-builder/compare/v1.5.12...v1.5.14) (2019-08-06)
+
+
+### Bug Fixes
+
+* Arreglado un error por el que se remplazaba incorrectamente el contenido entrecomillado ([0bbaf61](https://github.com/javipuche/maquetus-boilerplate-builder/commit/0bbaf61))
+
+
+### Build System
+
+* Actualizadas dependencias ([55ce947](https://github.com/javipuche/maquetus-boilerplate-builder/commit/55ce947))
+* Actualizados los "types" ([d12b706](https://github.com/javipuche/maquetus-boilerplate-builder/commit/d12b706))
+
+
+### Miscellaneous Chores
+
+* Ahora se eliminan el primer y último espacio vacío entre etiquetas HTML ([5db5e58](https://github.com/javipuche/maquetus-boilerplate-builder/commit/5db5e58))
+* Añadida opción a maquetus ([4098588](https://github.com/javipuche/maquetus-boilerplate-builder/commit/4098588))
+* **release:** 1.5.13 ([95ebb76](https://github.com/javipuche/maquetus-boilerplate-builder/commit/95ebb76))
+
 ### [1.5.13](https://github.com/javipuche/maquetus-boilerplate-builder/compare/v1.5.12...v1.5.13) (2019-08-05)
 
 

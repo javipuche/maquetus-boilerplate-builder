@@ -8,6 +8,7 @@ const compileComponentPreview = (file, data) => {
     data = data || getComponentPreviewData(file)
     const content = fs.readFileSync(file, 'utf8')
     const template = hbs.compile(content, {
+        explicitPartialContext: true,
         noEscape: true
     })
     return trimBetweenHtmlTags(trimQuotes(template(data)))

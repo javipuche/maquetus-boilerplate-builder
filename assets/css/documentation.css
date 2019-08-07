@@ -256,13 +256,11 @@ hr {
 }
 
 .c-nav__btn {
-  text-transform: uppercase;
-  font-size: var(--font-size-xs);
-  font-weight: 700;
+  font-size: var(--font-size-s);
+  font-weight: 600;
   padding: var(--space-xs);
   margin-top: var(--space-xs);
   margin-bottom: var(--space-xs);
-  letter-spacing: .05em;
   display: block;
   display: flex;
   justify-content: space-between;

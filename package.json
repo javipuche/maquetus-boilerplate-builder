@@ -1,6 +1,6 @@
 {
   "name": "maquetus-boilerplate-builder",
-  "version": "1.5.16",
+  "version": "1.5.17",
   "description": "Builder para diferentes boilerplates de maquetación web que usan Maquetus.",
   "main": "index.js",
   "scripts": {

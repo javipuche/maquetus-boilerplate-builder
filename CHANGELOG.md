@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.18](https://github.com/javipuche/maquetus-boilerplate-builder/compare/v1.5.17...v1.5.18) (2019-08-28)
+
+
+### Miscellaneous Chores
+
+* Add utils alias ([30e322a](https://github.com/javipuche/maquetus-boilerplate-builder/commit/30e322a))
+
 ### [1.5.17](https://github.com/javipuche/maquetus-boilerplate-builder/compare/v1.5.16...v1.5.17) (2019-08-28)
 
 

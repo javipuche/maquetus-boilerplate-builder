@@ -15,6 +15,7 @@
         "js": "assets/js",
         "jsApp": "assets/js/app",
         "modules": "assets/js/modules",
+        "utils": "assets/js/utils",
         "fonts": "assets/fonts",
         "images": "assets/images",
         "data": "data",

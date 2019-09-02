@@ -1,5 +1,5 @@
 const resizeIframe = (obj) => {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px'
+    obj.style.height = obj.contentWindow.document.body.querySelector('*:not(script):not(style)').scrollHeight + 'px'
 }
 
 const resizeIframeHeightByContent = () => {

@@ -10,7 +10,7 @@ const webpackConfig = () => {
     let options = {
         output: {
             path: resolve(folders.dist.root),
-            filename: `[name].js`,
+            filename: '[name].js',
             publicPath: config.publicPath.root
         },
         resolve: {
@@ -50,12 +50,13 @@ const webpackConfig = () => {
                         {
                             loader: 'sass-loader',
                             options: {
-                                // implementation: require('sass'),
                                 sourceMap: !env.isProduction,
-                                outputStyle: env.isProduction ? 'compressed' : 'expanded',
-                                includePaths: [
-                                    folders.src.sass
-                                ]
+                                sassOptions: {
+                                    outputStyle: env.isProduction ? 'compressed' : 'expanded',
+                                    includePaths: [
+                                        folders.src.sass
+                                    ]
+                                }
                             }
                         }
 
@@ -96,7 +97,7 @@ const webpackConfig = () => {
         },
         plugins: [
             new MiniCssExtractPlugin({
-                filename: `[name].css`
+                filename: '[name].css'
             })
         ]
     }

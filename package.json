@@ -60,7 +60,7 @@
     "js-beautify": "^1.10.2",
     "js-yaml": "^3.13.1",
     "maquetus": "^1.6.5",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "mini-css-extract-plugin": "^0.8.0",
     "node-notifier": "^6.0.0",
     "node-sass": "^4.13.0",
